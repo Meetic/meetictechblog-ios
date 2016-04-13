@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol CellViewModel {
+protocol CellItem {
     
     func reuseIdentifier() -> String
     func cellNib() -> UINib?
@@ -18,7 +18,7 @@ protocol CellViewModel {
     func register(collectionView: UICollectionView)    
 }
 
-extension CellViewModel {
+extension CellItem {
     
     func register(collectionView: UICollectionView) {
         let nib = self.cellNib()

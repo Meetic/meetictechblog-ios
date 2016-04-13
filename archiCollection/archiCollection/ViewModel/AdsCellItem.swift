@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct AdsViewModel {
+struct AdsCellItem {
     
     // MARK: - Properties
     let imageName: String
@@ -22,7 +22,7 @@ struct AdsViewModel {
 }
 
 // MARK: - EventTableViewItem protocol
-extension AdsViewModel: CellViewModel {
+extension AdsCellItem: CellItem {
     func reuseIdentifier() -> String {
         return "AdsCell"
     }

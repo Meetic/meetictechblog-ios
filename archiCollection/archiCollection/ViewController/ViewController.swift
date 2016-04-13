@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
    
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     lazy var viewModel: ViewModel = ViewModel(delegate: self)
-    var items = [CellViewModel]()
+    var items = [CellItem]()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {

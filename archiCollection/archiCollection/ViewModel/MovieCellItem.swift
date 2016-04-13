@@ -17,7 +17,7 @@ enum MovieType: String {
     static var allValues = [Cover, Poster, Side]
 }
 
-struct MovieViewModel {
+struct MovieCellItem {
     
     // MARK: - Properties
     let movie: Movie
@@ -44,8 +44,8 @@ struct MovieViewModel {
     }
 }
 
-// MARK: - EventTableViewItem protocol
-extension MovieViewModel: CellViewModel {
+// MARK: - CellItem protocol
+extension MovieCellItem: CellItem {
     func reuseIdentifier() -> String {
         return "MovieCell\(self.type.rawValue)"
     }

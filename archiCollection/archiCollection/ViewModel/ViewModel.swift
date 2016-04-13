@@ -19,7 +19,7 @@ protocol ViewModelDelegate {
 class ViewModel {
     
     private var delegate: ViewModelDelegate
-    var items = [CellViewModel]()
+    var items = [CellItem]()
     lazy var movies: [Movie] = {
         
         var tempMovies = [Movie]()
@@ -50,18 +50,18 @@ class ViewModel {
     }
     
     func addItems() {
-        var tempItems = [CellViewModel]()
+        var tempItems = [CellItem]()
         
         // Adds movie items        
         for movieType in MovieType.allValues {
             
             for index in 0..<self.movies.count {
                 let movie = self.movies[index]
-                let newItem = MovieViewModel(movie: movie, type: movieType)
+                let newItem = MovieCellItem(movie: movie, type: movieType)
                 tempItems.append(newItem)
                                 
                 if index == self.movies.count - 1 {
-                    let adsItem = AdsViewModel(imageName: "adBanner")
+                    let adsItem = AdsCellItem(imageName: "adBanner")
                     tempItems.append(adsItem)
                 }
             }
